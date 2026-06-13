@@ -1,11 +1,13 @@
-task.wait(5)
 local StarterGui = game:GetService("StarterGui")
 
--- Langsung matikan UI
-pcall(function()
-    StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
-    StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
-end)
+while true do
+    pcall(function()
+        StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, false)
+        StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, false)
+    end)
 
--- Setting grafik
-settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+
+    -- Menunggu 5 detik sebelum mengulang kembali
+    task.wait(5)
+end
